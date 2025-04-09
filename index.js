@@ -170,7 +170,11 @@ try {
 }
 });
 
-
+app.post('/logout', (req, res) => {
+    res.clearCookie('token'); // this will clear the token from cookies
+    res.json({ message: 'Logout successful' });
+  });
+  
 app.get('/', (req, res) => {
     res.json("twitter backend is working")
 })
